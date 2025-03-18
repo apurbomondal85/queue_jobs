@@ -1,0 +1,1 @@
+This email for user {{ $data['email'] }}
