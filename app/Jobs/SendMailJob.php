@@ -24,7 +24,9 @@ class SendMailJob implements ShouldQueue
      */
     public function handle(): void
     {
-        Mail::to($this->user->email)->send(new TestMail($this->user));
-        Mail::to('admin@example.com')->send(new AdminMail($this->user));
+        for($i=0; $i<100; $i++){
+            Mail::to($this->user->email)->send(new TestMail($this->user));
+        };
+        // Mail::to('admin@example.com')->send(new AdminMail($this->user));
     }
 }
